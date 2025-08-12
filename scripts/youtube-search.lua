@@ -6,7 +6,7 @@
 --
 table.unpack = table.unpack or unpack
 utils = require 'mp.utils'
-limit = 5
+limit = 25
 
 function get_focus_using_xdotool()
     return utils.subprocess({
@@ -25,9 +25,11 @@ end
 function search_youtube()
     local url_select = invoke_zenity({
         '--entry',
-        '--title=Search Youtube',
+        '--title=🔍 Search YouTube',
+        '--width=400',
+        '--height=150',
+        '--text=Enter your YouTube search query:\n(Top ' .. limit .. ' results will be loaded)',
         '--window-icon=mpv',
-        '--text=Enter Search Text:'
     })
     if (url_select.status ~= 0) then
         return

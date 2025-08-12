@@ -4,4 +4,3 @@ function on_swipe()
 end
 
 mp.add_forced_key_binding("MOUSE_BTN3", "disable_swipe", on_swipe)
-
